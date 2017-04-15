@@ -21,4 +21,4 @@ and do the following caculations:
 
 Then, he/she will get an
 
-\$\$t = v\_0\\sin\\theta\$\$
+$$t = v_0\sin\alpha\\theta\$$
