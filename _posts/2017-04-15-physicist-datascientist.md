@@ -20,3 +20,5 @@ and do the following caculations:
 >>s = v_0*\cos\theta*t = 2*v_0*\sin\theta*\cos\theta/g  
 
 Then, he/she will get an
+
+\$\$t = v\_0\\sin\\theta\$\$
