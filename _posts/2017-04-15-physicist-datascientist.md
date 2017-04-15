@@ -5,15 +5,12 @@ title: Data Scientists are Pre-Newton Physicists
 
 If you send a physicist to operate a mortar, he/she will pull out a pen and a piece of paper to do following calculations:
 
-\begin{equation}
-$\times$
-\end{equation}
 ```
-g <= gravitational acceleration value  
-v_0 <= initial velocity of the shell  
-$\theta$ <= angle between the tube and the ground  
-s <= distance between the mortar and the target  
-t <= flying time of the shell  
+*g* <= gravitational acceleration value  
+*v*<sub>0</sub> <= initial velocity of the shell  
+*θ* <= angle between the tube and the ground  
+*s* <= distance between the mortar and the target  
+*t* <= flying time of the shell  
 
 step1:   
 
