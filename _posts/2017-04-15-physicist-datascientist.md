@@ -5,8 +5,9 @@ title: Data Scientists are Pre-Newton Physicists
 
 If you send a physicist to operate a mortar, he/she will pull out a pen and a piece of paper to do following calculations:
 
+\begin{equation}
 $\times$
-
+\end{equation}
 ```
 g <= gravitational acceleration value  
 v_0 <= initial velocity of the shell  
