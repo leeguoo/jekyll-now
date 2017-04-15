@@ -8,7 +8,7 @@ If you send a physicist to operate a mortar, he/she will pull out a pen and a pi
 ```
 g <= gravitational acceleration value  
 v_0 <= initial velocity of the shell  
-\theta <= angle between the tube and the ground  
+$\theta$ <= angle between the tube and the ground  
 s <= distance between the mortar and the target  
 t <= flying time of the shell  
 
