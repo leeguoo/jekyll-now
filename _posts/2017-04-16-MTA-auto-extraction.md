@@ -1,29 +1,37 @@
 ---
 layout: post
-title: How to Automatically Extract Data From the MTA Website
+title: Automatically Extracting Data From MTA
 ---
 
-The turnstile data are available on the MTA website.
-http://web.mta.info/developers/turnstile.html
+The turnstile data of subway stations in New York City are available on the [MTA website](http://web.mta.info/developers/turnstile.html).
+
+
 
 Click one of these files, we will find two things. First, the data columns are separated by commas. It means the file is in csv format. If we have pandas installed, we don't have to manually download the file to our hard disks. Instead, we can directly read the data to a pandas dataframe.
+
 ```python
 import pandas as pd
 url = "http://web.mta.info/developers/data/nyct/turnstile/turnstile_170408.txt"
 df = pd.read_csv(url)
 ``` 
-The `url` is the link to the file. It can be found in the xxx.  
+
+Here,the `url` is the link to the file. It can be found in the address field of the broswer.  
+
 The second thing is that the file name `turnstile_170408.txt` contains a six-digit number indicating the date when the file was added. Since the data are updated weekly, the dates in the file names are seven day apart. If we want to extract the data corresponding to a large time window, for example a year (52 weeks), we don't have to input the links manually. We can generate them use several lines of codes demonstrated below.
+
 ```python
 import time
 from datetime import datetime
 
+#set the start and end days of the time window
 startday = "20170204"
 endday = "20170408"
 
+#obtain the timestamps
 starttime = time.mktime(datetime.strptime(startday,"%Y%m%d").timetuple())
 endtime = time.mktime(datetime.strptime(endday,"%Y%m%d").timetuple())
 
+#difference between two weeks
 t = starttime+14400
 week = 604800
 
@@ -32,4 +40,16 @@ while t <= endtime:
     url = "http://web.mta.info/developers/data/nyct/turnstile/turnstile_{0}.txt".format(name)
     print url
     t+=week
+```
+Here are the outputs:
+```
+http://web.mta.info/developers/data/nyct/turnstile/turnstile_170204.txt
+http://web.mta.info/developers/data/nyct/turnstile/turnstile_170211.txt
+http://web.mta.info/developers/data/nyct/turnstile/turnstile_170218.txt
+http://web.mta.info/developers/data/nyct/turnstile/turnstile_170225.txt
+http://web.mta.info/developers/data/nyct/turnstile/turnstile_170304.txt
+http://web.mta.info/developers/data/nyct/turnstile/turnstile_170311.txt
+http://web.mta.info/developers/data/nyct/turnstile/turnstile_170318.txt
+http://web.mta.info/developers/data/nyct/turnstile/turnstile_170325.txt
+http://web.mta.info/developers/data/nyct/turnstile/turnstile_170401.txt
 ```
