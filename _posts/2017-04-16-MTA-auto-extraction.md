@@ -3,8 +3,6 @@ layout: post
 title: Automatically Extracting Data From MTA
 ---
 
-# The Data
-
 The turnstile data of subway stations in New York City are available on the [MTA website](http://web.mta.info/developers/turnstile.html).
 
 ![](https://github.com/leeguoo/leeguoo.github.io/blob/master/images/2017-04-16-MTA-auto-extraction/Screen%20Shot%202017-04-16%20at%2011.45.46%20AM.png?raw=true)
