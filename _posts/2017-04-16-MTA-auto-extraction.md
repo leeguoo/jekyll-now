@@ -13,7 +13,7 @@ By clicking one of these files, we can have a look at the contents.
 
 ![](https://github.com/leeguoo/leeguoo.github.io/blob/master/images/2017-04-16-MTA-auto-extraction/Screen%20Shot%202017-04-16%20at%201.40.43%20PM.png?raw=true)
 
-Two things are interesting here. First, the data columns are separated by commas. It means the file is in csv format.The second thing is that the file name **turnstile_170408.txt** contains a six-digit number indicating the date when the file was added. Since the data are updated weekly, the dates in the file names are seven day apart. We can take advantages of these two findings.
+Two things are interesting here. First, the data columns are separated by commas. It means the file is in csv format. The second thing is that the file name **turnstile_170408.txt** (can be found in the address field) contains a six-digit number indicating the date when the file was added. Since the data are updated weekly, the dates in the file names are seven days apart. We can take advantages of these two findings.
 
 # Extract Data from One File
 
@@ -27,7 +27,7 @@ df = pd.read_csv(url)
 
 Here,the **url** is the link to the file. It can be found in the address field of the broswer.  
 
-# Extract Data from Multiple Files *automatically*
+# Extract Data from Multiple Files *Automatically*
 
 If we want to extract the data corresponding to a large time window, for example a year (52 weeks), we don't have to input the links manually. We can generate them according to the relation between filenames.
 
