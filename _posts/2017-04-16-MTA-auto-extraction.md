@@ -25,9 +25,9 @@ df = pd.read_csv(url)
 
 Here,the **url** is the link to the file. It can be found in the address field of the broswer.  
 
-# Extract Data from Multiple Files *Automatically*
+# Extract Data in A Time Window
 
-If we want to extract the data corresponding to a large time window, for example a year (52 weeks), we don't have to input the links manually. We can generate them according to the relation between filenames.
+If we want to extract the data in a time window, for example a year (52 weeks), we don't have to input the links manually. We can generate them according to the relation between filenames.
 
 ```python
 import time
