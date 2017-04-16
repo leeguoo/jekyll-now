@@ -1,0 +1,35 @@
+---
+layout: post
+title: How to Automatically Extract Data From the MTA Website
+---
+
+The turnstile data are available on the MTA website.
+http://web.mta.info/developers/turnstile.html
+
+Click one of these files, we will find two things. First, the data columns are separated by commas. It means the file is in csv format. If we have pandas installed, we don't have to manually download the file to our hard disks. Instead, we can directly read the data to a pandas dataframe.
+```python
+import pandas as pd
+url = "http://web.mta.info/developers/data/nyct/turnstile/turnstile_170408.txt"
+df = pd.read_csv(url)
+``` 
+The `url` is the link to the file. It can be found in the xxx.  
+The second thing is that the file name `turnstile_170408.txt` contains a six-digit number indicating the date when the file was added. Since the data are updated weekly, the dates in the file names are seven day apart. If we want to extract the data corresponding to a large time window, for example a year (52 weeks), we don't have to input the links manually. We can generate them use several lines of codes demonstrated below.
+```python
+import time
+from datetime import datetime
+
+startday = "20170204"
+endday = "20170408"
+
+starttime = time.mktime(datetime.strptime(startday,"%Y%m%d").timetuple())
+endtime = time.mktime(datetime.strptime(endday,"%Y%m%d").timetuple())
+
+t = starttime+14400
+week = 604800
+
+while t <= endtime:
+    name = datetime.fromtimestamp(t).strftime('%Y%m%d')[2:]
+    url = "http://web.mta.info/developers/data/nyct/turnstile/turnstile_{0}.txt".format(name)
+    print url
+    t+=week
+```
