@@ -9,7 +9,6 @@ For example, the [twocol.csv](https://raw.githubusercontent.com/leeguoo/leeguoo.
 
 ```python
 import pandas as pd
-
 df = pd.read_csv("twocol.csv",index_col='time')
 df.plot()
 ```
@@ -31,6 +30,8 @@ def RmOutliers(df):
         if all(nums-np.array(df.notnull().sum())==0):
             break
     return df.interpolate()
+df = RmOutliers(df)
+df.plot()
 ``` 
 The outliers are removed by this line:
 ```python
@@ -45,7 +46,6 @@ I iterate it for many times until all the rest data are in the six-deviation ran
 Another interesting thing about outliers is that they are only a few and not continuous. That means they are very different from their neighbors. So we can easily remove the outliers by replacing each data point with the median of a local cluster containing the data point and its neighbors. Here is the code:
 
 ```python
-df = pd.read_csv("twocol.csv")
 df = df.rolling(3).median()
 df.plot()
 ```
