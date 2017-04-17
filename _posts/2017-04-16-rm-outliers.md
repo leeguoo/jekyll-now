@@ -42,7 +42,7 @@ I iterate it for many times until all the rest data are in the six-deviation ran
 
 # Use Rolling Median
 
-Another interesting thing about outliers is that they are only a few and not continuous. That means they are very different from their neighbors. So we can easily remove the outliers by replacing each data point with the median ofa local cluster containing the data point and its neighbors. Here is the code:
+Another interesting thing about outliers is that they are only a few and not continuous. That means they are very different from their neighbors. So we can easily remove the outliers by replacing each data point with the median of a local cluster containing the data point and its neighbors. Here is the code:
 
 ```python
 df = pd.read_csv("twocol.csv")
@@ -52,4 +52,4 @@ df.plot()
 
 The number **3** means the local cluster contains the data point and its two nearest neighbors. The reuslts are here:
 
-![](https://github.com/leeguoo/leeguoo.github.io/blob/master/images/2017-04-16-rm-outliers/outlier_1.png?raw=true)
+![](https://github.com/leeguoo/leeguoo.github.io/blob/master/images/2017-04-16-rm-outliers/outlier_3.png?raw=true)
