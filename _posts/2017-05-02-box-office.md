@@ -28,7 +28,7 @@ In this method, I began with all the features, performed the model, obtained the
 
 The scores versus the number of features are shown below. I chose the features which gave the highest score.
 
-![]
+![](https://github.com/leeguoo/leeguoo.github.io/blob/master/images/2017-05-02-box-office/rfe.png?raw=true)
 
 # Hyper parameter Optimization
 
@@ -39,7 +39,7 @@ I used grid search method to find the optimal hyper parameters. In this model I 
 The testing score is 0.561, and the hold-out score is 0.586.
 The predictions versus the true observations are shown below.
 
-![]
+![](https://github.com/leeguoo/leeguoo.github.io/blob/master/images/2017-05-02-box-office/result.png?raw=true)
 
 
 
