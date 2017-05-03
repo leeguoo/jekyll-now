@@ -1,6 +1,6 @@
 ---
 layout: post
-Predicting Box Office of Future Movies
+title: Predicting Box Office of Future Movies
 ---
 
 What is the risk of investing in a movie? The investors would lose money, if the movie is bad box office. So before making an investment, investors would spend some time to look at the information about the directors, actors, composers… and get a feeling about the box office. 
