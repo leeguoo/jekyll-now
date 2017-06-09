@@ -15,9 +15,7 @@ What do you think is the rating associated with this review? I guessed a rating 
 
 Here is another review from Amazon:
 
-```
-“This book is so cute and it really made me feel warm inside to turn the pages and discover various animals and their moms playing together. We have more in common with animals than we might at first think. A perfect and adorable animal picture book for Mother's Day!”
-```
+>“This book is so cute and it really made me feel warm inside to turn the pages and discover various animals and their moms playing together. We have more in common with animals than we might at first think. A perfect and adorable animal picture book for Mother's Day!”
 
 This is a very positive review, but the associated rating is only one star. This is no more a disagreement on standards, I consider it as a misrating.
 
@@ -30,12 +28,12 @@ To solve this problem, a practical strategy is to build a model which can mimic 
 In the experiment, I selected the Amazon reviews and ratings of 2014 for the products in the category of “kid & baby”, and split them into a training set and a test set. The review texts were transformed into a binary feature matrix, in which the rows and columns are corresponding to reviews and the unique words appeared in all the training reviews, respectively. Each matrix element is either 1 or 0, indicating whether the word exists in the review. Training a Bernoulli Naive model with the training set and evaluating it with the test set results in classification scores as below.
 
 | Rating | Precision | Recall | f1-score |
-|--------|-----------|--------|----------|
+|:---:|:---:|:---:|:---:|
 | 1      | 0.53      | 0.49   | 0.51     |
-|--------|-----------|--------|----------|
 | 2      | 0.20      | 0.16   | 0.18     |
-|--------|-----------|--------|----------|
-
+| 3 | 0.30 | 0.20 | 0.24 |
+| 4 | 0.32 | 0.24 | 0.27 |
+| 5 | 0.74 | 0.85 | 0.79 |
 
 Given the simplicity of the model, these scores are fairly good. It is interesting that one- and five-star ratings are much easier to distinguish than two-, three- and four-star ratings, consistent with our impression about ratings. 
 
