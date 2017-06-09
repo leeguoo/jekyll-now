@@ -9,9 +9,7 @@ In collaborative recommender systems, all the recommendations rely on customer r
 
 Let’s see an example. Here is a review written by an Amazon customer: 
 
-```
-“this dress is beautiful, my daughter have two of this dresses one in purple and this green one. the only problem is the price, its crazy!!!! Healthtex is a walmart brand so i purchased both dresses at walmart and for this crazy price i can buy 3 of this dresses at walmart and i don't have to pay shipping!!” 
-```
+>“this dress is beautiful, my daughter have two of this dresses one in purple and this green one. the only problem is the price, its crazy!!!! Healthtex is a walmart brand so i purchased both dresses at walmart and for this crazy price i can buy 3 of this dresses at walmart and i don't have to pay shipping!!” 
 
 What do you think is the rating associated with this review? I guessed a rating of two or three stars would be suitable, because the customer complained a lot about the price. However, the customer put a five-star rating on it. Apparently this customer and I have different standards of ratings, and he or she is more generous. 
 
@@ -35,6 +33,9 @@ In the experiment, I selected the Amazon reviews and ratings of 2014 for the pro
 |--------|-----------|--------|----------|
 | 1      | 0.53      | 0.49   | 0.51     |
 |--------|-----------|--------|----------|
+| 2      | 0.20      | 0.16   | 0.18     |
+|--------|-----------|--------|----------|
+
 
 Given the simplicity of the model, these scores are fairly good. It is interesting that one- and five-star ratings are much easier to distinguish than two-, three- and four-star ratings, consistent with our impression about ratings. 
 
