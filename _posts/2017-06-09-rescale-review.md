@@ -27,13 +27,7 @@ To solve this problem, a practical strategy is to build a model which can mimic 
 
 In the experiment, I selected the Amazon reviews and ratings of 2014 for the products in the category of “kid & baby”, and split them into a training set and a test set. The review texts were transformed into a binary feature matrix, in which the rows and columns are corresponding to reviews and the unique words appeared in all the training reviews, respectively. Each matrix element is either 1 or 0, indicating whether the word exists in the review. Training a Bernoulli Naive model with the training set and evaluating it with the test set results in classification scores as below.
 
-| Rating | Precision | Recall | f1-score |
-|:---:|:---:|:---:|:---:|
-| 1      | 0.53      | 0.49   | 0.51     |
-| 2      | 0.20      | 0.16   | 0.18     |
-| 3 | 0.30 | 0.20 | 0.24 |
-| 4 | 0.32 | 0.24 | 0.27 |
-| 5 | 0.74 | 0.85 | 0.79 |
+![](https://raw.githubusercontent.com/leeguoo/leeguoo.github.io/43fd72046c44ac61efc69210bb0c23756aab1bc3/images/2017-06-09-rescale-review/scores.png?raw=true)
 
 Given the simplicity of the model, these scores are fairly good. It is interesting that one- and five-star ratings are much easier to distinguish than two-, three- and four-star ratings, consistent with our impression about ratings. 
 
@@ -47,10 +41,10 @@ Besides simplicity, the other reason I chose a Naive Bayes model is its interpre
 
 The below table shows the ten most frequent words, ranked by their probabilities (P(word | rating)), in each rating.   
 
-
+![](https://raw.githubusercontent.com/leeguoo/leeguoo.github.io/43fd72046c44ac61efc69210bb0c23756aab1bc3/images/2017-06-09-rescale-review/impt_words.png?raw=true)
 
 Obviously, to distinguish ratings, we can’t rely on these most frequent words. We need to extract the words which are more frequent in one rating than in others. To achieve that, I calculate adjusted probabilities by dividing the probabilities of the words in each rating by the sum of their probabilities in all ratings. The top ten words ranked by the adjusted probabilities in each rating are shown in the below table.
 
-
+![](https://raw.githubusercontent.com/leeguoo/leeguoo.github.io/43fd72046c44ac61efc69210bb0c23756aab1bc3/images/2017-06-09-rescale-review/impt_words.png?raw=true)
 
 Now the patter is much more clear!
