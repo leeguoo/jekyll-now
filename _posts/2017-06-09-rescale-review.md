@@ -39,7 +39,7 @@ To improve the model, I will need to create more features using techniques like 
 
 Besides simplicity, the other reason I chose a Naive Bayes model is its interpretability. Since Naive Bayes models can easily take care of huge number of features, I can keep all the unique words and find out which are the most important words to distinguish different ratings. 
 
-The below table shows the ten most frequent words, ranked by their probabilities (P(word | rating)), in each rating.   
+The below table shows the ten most frequent words, ranked by their probabilities, in each rating.   
 
 ![](https://raw.githubusercontent.com/leeguoo/leeguoo.github.io/43fd72046c44ac61efc69210bb0c23756aab1bc3/images/2017-06-09-rescale-review/freq_words.png?raw=true)
 
