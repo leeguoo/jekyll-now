@@ -17,5 +17,7 @@ The basic assumption is that although customers might not know what their target
 
 Following these assumptions, I constructed a graph database of products using Neo4j. The nodes are the baby products obtained from Amazon Review Data. Each of them is connected with the products which customers also viewed if they viewed this product. Then, the recommendations are made using the following procedure.
 - When a customer clicks the first product, we set the weights of the clicked product and the products connected to it as one, and recommend the connected products.
-- When the customer clicks another product, we decrease the old weights by a half, and add one to the weights of the newly clicked product and the products connected to it. This time, we recommend the all the products with non-zero weights, but rank them by the weights. 
+- When the customer clicks another product, we decrease the old weights by a half, and add one to the weights of the newly clicked product and the products connected to it. This time, we recommend all the products with non-zero weights, but rank them by the weights. 
 - We repeat the second step until the customer find the target products.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NSiL2jWYr54" frameborder="0" allowfullscreen></iframe>
